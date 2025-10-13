@@ -94,3 +94,30 @@ variable "table_name7" { type = string, default = "user-monitor" }
 variable "table_name8" { type = string, default = "file-status" }
 variable "url_suffix" { type = string, description = "AWS URL suffix", default = "amazonaws.com" }
 variable "partition" { type = string, description = "AWS partition", default = "aws" }
+variable "system_identity_provider" { type = string, default = "COGNITO", description = "Configured System IDP" }
+variable "admin_username" { type = string, default = "admin", description = "Initial admin username" }
+variable "tenant_cost_code" { type = string, default = "test002", description = "Cost code for the tenant" }
+variable "service_resource_name_module" { type = string, default = "module", description = "Module service resource name" }
+variable "container_repository_tag" { type = string, default = "55b51eaa", description = "Container image tag" }
+variable "admin_groupname" { type = string, default = "TenantAdminGroup", description = "Admin group name" }
+variable "admin_email_address" { type = string, default = "manish.tiwari2@exlservice.com", description = "Admin email" }
+variable "builder_groupname" { type = string, default = "TenantBuilderGroup", description = "Builder group name" }
+variable "validator_groupname" { type = string, default = "TenantValidatorGroup", description = "Validator group name" }
+variable "manager_groupname" { type = string, default = "TenantManagerGroup", description = "Manager group name" }
+variable "parameter_lock_name" { type = string, default = "ConcurrencySemaphore", description = "Semaphore lock name" }
+variable "concurrent_access_limit" { type = string, default = "5", description = "Max concurrent access limit" }
+variable "code_commit_account_id" { type = string, default = "812894578144", description = "CodeCommit account id" }
+variable "lambda_source_folder" { type = string, default = "lambdas", description = "Lambda source folder in S3" }
+variable "concurrency_bucket" { type = string, default = "sb-dev18-resources-d37f71f4", description = "S3 bucket for concurrency Lambda code" }
+variable "web_url" { type = string, default = "", description = "Custom Web URL for Cognito callbacks" }
+variable "service_code_repo_ingestion" { type = string, default = "medical-idp-ingestion-service", description = "Service code repo for ingestion" }
+variable "service_code_repo_module" { type = string, default = "medical-idp-module-service", description = "Service code repo for module" }
+variable "service_code_repo_ui" { type = string, default = "medical-idp-ui", description = "Service code repo for UI" }
+variable "ssm_parameter_ingestion" { type = string, default = "/saas-platform/uat12/app/ingestion/SERVICE_JSON", description = "SSM parameter for ingestion build" }
+variable "ssm_parameter_module" { type = string, default = "/saas-platform/uat12/app/module/SERVICE_JSON", description = "SSM parameter for module build" }
+variable "github_enterprise_connection_arn" { type = string, default = "arn:aws:codeconnections:us-east-1:812894578144:connection/b3cdba7a-072b-4966-b232-5858331b88dd", description = "CodeStar connection ARN" }
+variable "api_repository_name" { type = string, default = "55b51eaa-ingestion-service", description = "GHE repo name for API" }
+variable "ui_repository_name" { type = string, default = "medical-idp", description = "GHE repo name for UI" }
+variable "api_service_code_branch" { type = string, default = "55b51eaa_EXlerateAI", description = "API branch" }
+variable "ui_service_code_branch" { type = string, default = "55b51eaa/uat-EXlerateAIUI", description = "UI branch" }
+variable "container_repository_module" { type = string, default = "sb-uat12-core-191g9bof3kcsf-module-ylvbgqo8w7wz", description = "Module ECR repo name" }
